@@ -1,3 +1,5 @@
+USE sustainability;
+GO
 -- ============================================================
 -- SQL PORTFOLIO — SUSTAINABILITY ENERGY DATA ANALYSIS
 -- ============================================================
