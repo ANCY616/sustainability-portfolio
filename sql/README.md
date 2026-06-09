@@ -8,9 +8,10 @@ SUM, AVG, COUNT, MIN, MAX, TOP, DISTINCT
 BETWEEN, ROUND, ISNULL, IS NULL, subqueries
 
 ## Key finding
-HVAC accounts for 55-63% of monthly energy consumption.
-Peak month: July. SQL validates Power BI dashboard findings.
+HVAC accounts for 62.8% of total energy in July — peak month. 
+Validated against Power BI dashboard findings using the same dataset. 
+All queries run on Microsoft SQL Server 2022 Express.
 
 ## Certifications
-Microsoft Learn T-SQL — all 6 modules complete.
-LEED AP O+M | MSc Sustainable Engineering | IFRS S1/S2
+Microsoft Learn T-SQL — all 6 modules complete. 
+LEED AP O+M | MSc Sustainable Engineering.
