@@ -4,11 +4,12 @@ GO
 -- SQL PORTFOLIO — SUSTAINABILITY ENERGY DATA ANALYSIS
 -- ============================================================
 -- Author:      Ancy Antony | LEED AP O+M | MSc Sustainable Engineering
--- Dataset:     Simulated monthly energy data — 12-month building dataset
+-- Dataset:     Benchmarked monthly energy data — 12-month building dataset
 -- Building:    5,000 m2 commercial office, UAE region
 -- Context:     Benchmarked against Emirates Green Building Council
 --              figures and UAE Ministry of Energy grid emission factor
---              (0.4 kg CO2/kWh). HVAC-dominated load profile.
+--              (0.3833 kg CO2e/kWh · Source: DEWA Sustainability Report 2025). 
+--              VAC-dominated load profile.
 -- Purpose:     Demonstrate SQL querying skills applied to sustainability
 --              data — for portfolio and ESG analyst role applications
 -- Queries:     16 queries covering SELECT, WHERE, ORDER BY, GROUP BY,
@@ -27,38 +28,38 @@ FROM energy_data
 -- QUERY 2: SELECT COLUMNS — Monthly CO2 Figures
 -- ============================================================
 -- Show month and CO2 figures only — starting point for carbon reporting
-SELECT Month, CO2_kg
+SELECT Month, Emissions_kgCO2e
 FROM energy_data
 
 -- ============================================================
 -- QUERY 3: WHERE — Find High Emission Months
 -- ============================================================
 -- Filter months where CO2 exceeded 2500 kg — priority months for intervention
-SELECT Month, CO2_kg
+SELECT Month, Emissions_kgCO2e
 FROM energy_data
-WHERE CO2_kg > 2500
+WHERE Emissions_kgCO2e > 2500
 
 -- ============================================================
 -- QUERY 4: ORDER BY — Rank Months by Carbon Emissions
 -- ============================================================
 -- Sort months from highest to lowest CO2 — worst performers appear first
-SELECT Month, CO2_kg
+SELECT Month, Emissions_kgCO2e
 FROM energy_data
-ORDER BY CO2_kg DESC
+ORDER BY Emissions_kgCO2e DESC
 
 -- ============================================================
 -- QUERY 5: IS NULL — Check for Missing Data
 -- ============================================================
 -- Check for missing CO2 data — gaps are a compliance risk in ESG reporting
-SELECT Month, CO2_kg
+SELECT Month, Emissions_kgCO2e
 FROM energy_data
-WHERE CO2_kg IS NULL
+WHERE Emissions_kgCO2e IS NULL
 
 -- ============================================================
 -- QUERY 6: SUM + GROUP BY — Monthly CO2 Totals
 -- ============================================================
 -- Add up total CO2 for each month — foundation of a Scope 2 carbon report
-SELECT Month, SUM(CO2_kg) AS Tally
+SELECT Month, SUM(Emissions_kgCO2e) AS Tally
 FROM energy_data
 GROUP BY Month
 
@@ -97,9 +98,9 @@ WHERE Total_kWh = (SELECT MAX(Total_kWh) FROM energy_data)
 -- QUERY 11: MIN SUBQUERY — Best Performing Month
 -- ============================================================
 -- Find the month with the lowest CO2 emissions — best performing month of the year
-SELECT Month, CO2_kg
+SELECT Month, Emissions_kgCO2e
 FROM energy_data
-WHERE CO2_kg = (SELECT MIN(CO2_kg) FROM energy_data)
+WHERE Emissions_kgCO2e = (SELECT MIN(Emissions_kgCO2e) FROM energy_data)
 
 -- ============================================================
 -- QUERY 12: BETWEEN — Normal Operating Range
@@ -113,17 +114,17 @@ WHERE Total_kWh BETWEEN 5000 AND 7000
 -- QUERY 13: DISTINCT — Unique CO2 Values
 -- ============================================================
 -- Show all unique CO2 values — removes duplicates to see distinct emission levels
-SELECT DISTINCT CO2_kg
+SELECT DISTINCT Emissions_kgCO2e
 FROM energy_data
 
 -- ============================================================
 -- QUERY 14: HAVING — Filter Groups After Aggregation
 -- ============================================================
 -- Find months where total CO2 exceeded 2500 — HAVING filters after grouping, WHERE filters before
-SELECT Month, SUM(CO2_kg) AS Total_CO2
+SELECT Month, SUM(Emissions_kgCO2e) AS Total_CO2
 FROM energy_data
 GROUP BY Month
-HAVING SUM(CO2_kg) > 2500
+HAVING SUM(Emissions_kgCO2e) > 2500
 
 -- ============================================================
 -- QUERY 15: ROUND — HVAC Percentage per Month
@@ -137,5 +138,5 @@ ORDER BY HVAC_Percent DESC
 -- QUERY 16: ISNULL — Handle Missing Data
 -- ============================================================
 -- Replace missing CO2 values with 0 — ensures no gaps in ESG reporting data
-SELECT Month, ISNULL(CO2_kg, 0) AS CO2_Cleaned
+SELECT Month, ISNULL(Emissions_kgCO2e, 0) AS CO2_Cleaned
 FROM energy_data
