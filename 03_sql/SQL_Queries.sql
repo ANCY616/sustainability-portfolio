@@ -9,7 +9,7 @@ GO
 -- Context:     Benchmarked against Emirates Green Building Council
 --              figures and UAE Ministry of Energy grid emission factor
 --              (0.3833 kg CO2e/kWh · Source: DEWA Sustainability Report 2025). 
---              VAC-dominated load profile.
+--              HVAC-dominated load profile.
 -- Purpose:     Demonstrate SQL querying skills applied to sustainability
 --              data — for portfolio and ESG analyst role applications
 -- Queries:     16 queries covering SELECT, WHERE, ORDER BY, GROUP BY,
