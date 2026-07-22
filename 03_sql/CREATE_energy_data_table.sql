@@ -11,7 +11,7 @@ GO
 -- Step 1: Delete the table if it already exists (so you can re-run safely)
 IF OBJECT_ID('energy_data', 'U') IS NOT NULL
     DROP TABLE energy_data;
-yyy
+
 -- Step 2: Create the table
 CREATE TABLE energy_data (
     Month        VARCHAR(10),
