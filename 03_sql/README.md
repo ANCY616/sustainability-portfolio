@@ -20,5 +20,5 @@ Microsoft Learn T-SQL — all 6 modules complete.
 LEED AP O+M | MSc Sustainable Engineering.
 
 Files:
-- SQL_Queries.sql (16 foundational queries)
-- CREATE_energy_data_table.sql (dataset setup)
+SQL_Queries.sql (16 foundational queries)
+CREATE_energy_data_table.sql (creates the database, table, and loads all 12 months of data — run this first)
