@@ -82,7 +82,6 @@ FROM energy_data
 WHERE HVAC_kWh > 44000
 
 -- ============================================================
--- ============================================================
 -- QUERY 9: MAX SUBQUERY — Peak Emission Month
 -- ============================================================
 -- Which single month had the highest CO2 emissions? Identifies the worst carbon month for Scope 2 intervention.
