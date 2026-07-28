@@ -30,15 +30,15 @@ FROM energy_data
 -- Show month and CO2 figures only — starting point for carbon reporting
 SELECT Month, Total_kWh
 FROM energy_data
-WHERE Total_kWh > 6000
+WHERE Total_kWh > 71000
 
 -- ============================================================
 -- QUERY 3: WHERE — Find High Emission Months
 -- ============================================================
--- Filter months where CO2 exceeded 2500 kg — priority months for intervention
+-- Filter months where CO2 exceeded 27000 kg — priority months for intervention
 SELECT Month, Emissions_kgCO2e
 FROM energy_data
-WHERE Emissions_kgCO2e > 2500
+WHERE Emissions_kgCO2e > 27000
 ORDER BY Emissions_kgCO2e DESC
 
 -- ============================================================
@@ -76,15 +76,16 @@ FROM energy_data
 -- ============================================================
 -- QUERY 8: COUNT — Peak HVAC Months
 -- ============================================================
--- Count months where HVAC exceeded 4000 kWh — scopes seasonal BMS interventions
+-- Count months where HVAC exceeded 44000 kWh — scopes seasonal BMS interventions
 SELECT COUNT(*) AS High_HVAC_Months
 FROM energy_data
-WHERE HVAC_kWh > 4000
+WHERE HVAC_kWh > 44000
 
 -- ============================================================
--- QUERY 9: TOP 3 — Highest Energy Months
 -- ============================================================
--- Find the 3 highest energy consumption months — primary targets for demand reduction
+-- QUERY 9: MAX SUBQUERY — Peak Emission Month
+-- ============================================================
+-- Which single month had the highest CO2 emissions? Identifies the worst carbon month for Scope 2 intervention.
 SELECT Month, Emissions_kgCO2e
 FROM energy_data
 WHERE Emissions_kgCO2e = (SELECT MAX(Emissions_kgCO2e) FROM energy_data)
@@ -108,10 +109,10 @@ WHERE Emissions_kgCO2e = (SELECT MIN(Emissions_kgCO2e) FROM energy_data)
 -- ============================================================
 -- QUERY 12: BETWEEN — Normal Operating Range
 -- ============================================================
--- Find months with moderate energy use between 5000 and 7000 kWh — identifies normal operating range
+-- Find months with moderate energy use between 58000 and 79000 kWh — identifies normal operating range
 SELECT Month, Total_kWh
 FROM energy_data
-WHERE Total_kWh BETWEEN 5000 AND 7000
+WHERE Total_kWh BETWEEN 58000 AND 79000
 
 -- ============================================================
 -- QUERY 13: DISTINCT — Unique CO2 Values
@@ -123,11 +124,11 @@ FROM energy_data
 -- ============================================================
 -- QUERY 14: HAVING — Filter Groups After Aggregation
 -- ============================================================
--- Find months where total CO2 exceeded 2500 — HAVING filters after grouping, WHERE filters before
+-- Find months where total CO2 exceeded 27000 — HAVING filters after grouping, WHERE filters before
 SELECT Month, SUM(Emissions_kgCO2e) AS Total_CO2
 FROM energy_data
 GROUP BY Month
-HAVING SUM(Emissions_kgCO2e) > 2500
+HAVING SUM(Emissions_kgCO2e) > 27000
 
 -- ============================================================
 -- QUERY 15: ROUND — HVAC Percentage per Month
