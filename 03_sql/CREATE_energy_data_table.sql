@@ -1,4 +1,5 @@
-CREATE DATABASE sustainability;
+IF DB_ID('sustainability') IS NULL
+    CREATE DATABASE sustainability;
 GO
 USE sustainability;
 GO
