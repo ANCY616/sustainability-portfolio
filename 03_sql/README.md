@@ -24,3 +24,5 @@ Files:
 SQL_Queries.sql (16 foundational queries)
 
 CREATE_energy_data_table.sql (creates the database, table, and loads all 12 months of data — run this first)
+
+Day 27 — Advanced Queries: CTEs, window functions, LAG(), CASE, and a subquery on a new GHG dataset (24+ rows, 2 sites). See 03_SQL/Day27_Advanced_Queries.
