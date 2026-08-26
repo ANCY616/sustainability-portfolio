@@ -15,3 +15,9 @@ Files:
 Sustainability_Dashboard.pbix (the dashboard file)
 energy_data.csv (source data)
 dashboard_full.png (screenshot for reference)
+
+Day 25 — DAX Measures: Added 4 custom measures to the existing dashboard — 
+Carbon Intensity per m², Month-on-Month Change %, Peak vs Off-Peak Ratio, 
+and a Rolling 3-Month Average. Dashboard restructured into 2 pages: 
+Page 1 (original visuals) and Page 2 (Advanced DAX Analysis). See 
+Day25_DAX_Dashboard folder for the updated .pbix and Dashboard_v2.pdf.
