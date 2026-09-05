@@ -7,7 +7,7 @@ Includes:
 - Material carbon comparisons (real EPD factors)
 - EPD analysis and case studies
 - LEED and Estidama compliance context
-- Carbon Trade_Off Calculator (Day 12) — Excel workbook modelling 
+- Carbon Trade-Off Calculator (Day 12) — Excel workbook modelling 
   concrete/steel/CLT substitution scenarios, with live XLOOKUP-driven 
   EPD factors and a What-If tab. See Day12_Carbon_Calculator/ 
   (CarbonTradeOff_Calculator.xlsx)
