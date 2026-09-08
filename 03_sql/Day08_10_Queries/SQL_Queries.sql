@@ -25,9 +25,9 @@ SELECT *
 FROM energy_data
 
 -- ============================================================
--- QUERY 2: SELECT COLUMNS — Monthly CO2 Figures
+-- QUERY 2: SELECT COLUMNS — High Energy-Consumption Months
 -- ============================================================
--- Show month and CO2 figures only — starting point for carbon reporting
+-- Show months where total energy use exceeded 71,000 kWh — starting point for identifying peak-demand months
 SELECT Month, Total_kWh
 FROM energy_data
 WHERE Total_kWh > 71000
