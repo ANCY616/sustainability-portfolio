@@ -10,10 +10,11 @@ summer months (Jun–Aug).
 
 Benchmarks:
 - DEWA 2025 grid emission factor: 0.3833 kg CO2e/kWh
-- Energy target: 160 kWh/m²/year — UAE retrofit target range (160–260 
-  kWh/m²/year), per Saeed Al Abbar, Chairman, EmiratesGBC (Khaleej Times, 2016)
+- Energy target: 160 kWh/m²/year — UAE current-regulation band (160–260 kWh/m²/year),
+  per Saeed Al Abbar, Chairman, EmiratesGBC (Khaleej Times, 2016)
 
-Update: the Energy vs Target card now compares December (66,048 kWh) with the monthly target of 66,667 kWh (-0.93%, i.e. under target).
+Update: the Energy vs Target card now compares December (66,048 kWh) with the monthly
+target of 66,667 kWh (-0.93%, i.e. under target).
 
 Files:
 - Sustainability_Dashboard.pbix — the dashboard file
