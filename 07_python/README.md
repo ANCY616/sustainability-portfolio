@@ -6,9 +6,9 @@ Calculates Scope 2 emissions from UAE office energy data using the DEWA
 The script reads energy data (Total_kWh by month), multiplies by the 
 grid emission factor, and produces two outputs:
 - monthly_emissions.png — bar chart of monthly emissions
-- intensity_vs_benchmark.png — line chart comparing calculated intensity 
-  to a working benchmark of 55 kg CO2e/m²/year (illustrative, not 
-  independently sourced)
+- intensity_vs_benchmark.png — line chart of monthly emissions intensity
+  (kg CO2e/m²) against the dataset's own annual average
+  (5.11 kg CO2e/m² per month; 61.3 kg CO2e/m² for the year)
 
 Dependencies: pandas, matplotlib
 To run: python emissions_analysis.py
